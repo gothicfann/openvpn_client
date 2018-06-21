@@ -35,9 +35,9 @@ wget $LINK > /dev/null 2>&1 && tar zxvf $TAR > /dev/null && \
 
 echo -e "\xE2\x9C\x94 $OVPN has been installed from source."
 
-################################
+#################################
 ### GET YUBIKEY SERIALIZED ID ###
-################################
+#################################
 
 PKCS11_PATH="/usr/lib64/pkcs11/opensc-pkcs11.so"
 
