@@ -39,7 +39,11 @@ echo -e "\xE2\x9C\x94 $OVPN has been installed from source."
 ### GET YUBIKEY SERIALIZED ID ###
 #################################
 
-PKCS11_PATH="/usr/lib64/pkcs11/opensc-pkcs11.so"
+PKCS11_PATH="/ur/lib64/pkcs11/opensc-pkcs11.so"
+if [ ! -f $PKCS11_PATH ]; then
+	echo "Please enter correct opensc-pkcs11.so path"
+	exit 1
+fi
 
 while true
 do
