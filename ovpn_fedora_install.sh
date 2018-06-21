@@ -45,7 +45,7 @@ while true
 do
 	openvpn --show-pkcs11-ids $PKCS11_PATH | grep -i "serialized id" >> /dev/null
 	if [ $? -eq 0 ]; then
-		SERIAL=$(sudo openvpn --show-pkcs11-ids /usr/lib64/pkcs11/opensc-pkcs11.so | grep -i "serialized id" | tr -s ' ' | cut -d ' ' -f 4)
+		SERIAL=$(openvpn --show-pkcs11-ids /usr/lib64/pkcs11/opensc-pkcs11.so | grep -i "serialized id" | tr -s ' ' | cut -d ' ' -f 4)
 		break
 	else
 		echo "Please insert your yubikey device and press [ENTER]"
