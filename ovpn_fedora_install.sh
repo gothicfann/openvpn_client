@@ -10,8 +10,7 @@ DEPS=(wget make opensc openssl-devel lzo-devel pkcs11-helper-devel pam-devel)
 echo "Checking dependencies:"
 for PKG in ${DEPS[*]}
 do
-	rpm -q $PKG > /dev/null 2>&1
-	if [ $? -eq 0 ]; then
+	if rpm -q $PKG > /dev/null 2>&1; then
 		echo -e "\xE2\x9C\x94 $PKG is already installed."
 	else
 		echo -en "? Installing $PKG ..."\\r
@@ -24,30 +23,32 @@ echo ""
 ### INSTALL OPENVPN ###
 #######################
 
-OVPN=openvpn
 VERSION="2.4.6"
-TAR="${OVPN}-${VERSION}.tar.gz"
+TAR="openvpn-${VERSION}.tar.gz"
 LINK="https://swupdate.openvpn.org/community/releases/${TAR}"
-OVPN_BIN="/usr/local/sbin/openvpn"
 
 echo "Checking OpenVPN:"
 
-if rpm -q $OVPN > /dev/null; then
+if rpm -q openvpn > /dev/null; then
 	echo "removing old rpm based openvpn installation."
-	dnf remove $OVPN -y > /dev/null
+	dnf remove openvpn -y > /dev/null
 fi
 
-if [ -f $OVPN_BIN ] && $OVPN_BIN --version | grep "enable_systemd=no" > /dev/null && $OVPN_BIN --version | grep "enable_pkcs11=yes" > /dev/null; then
-	echo -e "\xE2\x9C\x94 $OVPN is already installed correctly."
+if which openvpn > /dev/null 2>&1 && openvpn --version | grep "enable_systemd=no" > /dev/null && openvpn --version | grep "enable_pkcs11=yes" > /dev/null; then
+	echo -e "\xE2\x9C\x94 openvpn is already installed correctly."
 else
-	echo -en "? Installing $OVPN from source ..."\\r
+	echo -en "? Installing openvpn from source ..."\\r
 	wget $LINK > /dev/null 2>&1 && tar zxvf $TAR > /dev/null && \
-		(cd ${OVPN}-${VERSION} && ./configure --enable-systemd=no --enable-pkcs11=yes > /dev/null \
-		&& make > /dev/null && make install > /dev/null) && \
-		rm -rf ${OVPN}-${VERSION} ${TAR}*
-	echo -e "\xE2\x9C\x94 $OVPN has been installed from source."
+		(cd openvpn-${VERSION} && ./configure --enable-systemd=no --enable-pkcs11=yes \
+		&& make && make install) && \
+		rm -rf openvpn-${VERSION} ${TAR}*
+	echo -e "\xE2\x9C\x94 openvpn has been installed from source."
 fi
 echo ""
+
+if [ -f /usr/local/sbin/openvpn ]; then
+	mv /usr/local/sbin/openvpn /usr/sbin/
+fi
 
 #################################
 ### GET YUBIKEY SERIALIZED ID ###
@@ -62,8 +63,8 @@ fi
 
 while true
 do
-	if $OVPN_BIN --show-pkcs11-ids /usr/lib64/pkcs11/opensc-pkcs11.so | grep -i "serialized id" > /dev/null; then
-		SERIAL=$(${OVPN_BIN} --show-pkcs11-ids /usr/lib64/pkcs11/opensc-pkcs11.so | grep -i "serialized id" | tr -s ' ' | cut -d ' ' -f 4)
+	if openvpn --show-pkcs11-ids /usr/lib64/pkcs11/opensc-pkcs11.so | grep -i "serialized id" > /dev/null; then
+		SERIAL=$(openvpn --show-pkcs11-ids /usr/lib64/pkcs11/opensc-pkcs11.so | grep -i "serialized id" | tr -s ' ' | cut -d ' ' -f 4)
 		break
 	else
 		echo "Please insert your yubikey device and press [ENTER]"
@@ -116,6 +117,6 @@ echo -e "\xE2\x9C\x94 ${CLIENT}.conf has been generated."
 echo ""
 echo ""
 echo "OpenVPN client has been successfully installed."
-echo "You can now use 'sudo /usr/local/sbin/openvpn ${CLIENT}.conf' to connect to VPN server."
+echo "You can now use 'sudo openvpn ${CLIENT}.conf' to connect to VPN server."
 echo "You will need to additionally enter PIN code of your Yubikey device."
 exit 0
