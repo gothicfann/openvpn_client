@@ -68,10 +68,10 @@ remote-cert-tls server
 cipher AES-256-CBC
 auth-nocache
 verb 4
-**### Your OpenSC pkcs11 drivers full path:
+<b>### Your OpenSC pkcs11 drivers full path:
 pkcs11-providers 'C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll'
 ### NOTE! Dont forget to paste your Serialized Id between the single quotes:
-pkcs11-id 'Serialized Id'**
+pkcs11-id 'Serialized Id'</b>
 <ca>
 -----BEGIN CERTIFICATE-----
 -----END CERTIFICATE-----
