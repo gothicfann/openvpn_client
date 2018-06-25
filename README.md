@@ -51,9 +51,9 @@ openvpn.exe --show-pkcs11-ids "C:\Program Files\OpenSC Project\OpenSC\pkcs11\ope
 ```
 4. You will get your certificates Serialized Id from Yubikey, similiar to this:  
 `piv_II/PKCS\x2315\x20emulated/0f1f5e860fae681b/client/01`
-5. Copy this Serilized Id and paste it in your `client.ovpn` file for `pkcs11-id` parameter:
+5. Copy this Serilized Id and paste it in your `client.ovpn` file for `pkcs11-id` parameter:  
+**NOTE! Paste your serialized id between single quotes ('')**
 
-`client-sample.ovpn`  
 ```
 client
 pull
@@ -68,10 +68,10 @@ remote-cert-tls server
 cipher AES-256-CBC
 auth-nocache
 verb 4
-### Your OpenSC pkcs11 drivers full path:
+**### Your OpenSC pkcs11 drivers full path:
 pkcs11-providers 'C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll'
 ### NOTE! Dont forget to paste your Serialized Id between the single quotes:
-pkcs11-id 'Serialized Id'
+pkcs11-id 'Serialized Id'**
 <ca>
 -----BEGIN CERTIFICATE-----
 -----END CERTIFICATE-----
