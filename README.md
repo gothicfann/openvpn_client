@@ -15,13 +15,25 @@ So lets start:
 
 ##### 1. Install Windows package manager (http://Chocolatey.org)
 
-open you command prompt (cmd.exe) as an `Administrator` user and issue command:
+Run you command prompt (cmd.exe) as an `Administrator` user and issue command:
 
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
+Note! After this close the `cmd.exe`.
 
-for more installation details please visit: https://chocolatey.org/install
+For more installation details please visit: https://chocolatey.org/install
 
 ##### 2. Install OpenSC
 
+Navigate to this link: https://github.com/OpenSC/OpenSC/releases
+Download latest compatible version for you OS and system architecture.
+Install it with default options.
+
+##### 3. Install OpenVPN (2.4.4)
+
+Run you command prompt (cmd.exe) as an `Administrator` user and issue command:
+
+```
+choco install openvpn -y
+```
