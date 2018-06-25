@@ -71,7 +71,7 @@ verb 4
 <b>### Your OpenSC pkcs11 drivers full path:
 pkcs11-providers 'C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll'
 ### NOTE! Dont forget to paste your Serialized Id between the single quotes:
-pkcs11-id 'Serialized Id'</b>
+pkcs11-id 'piv_II/PKCS\x2315\x20emulated/0f1f5e860fae681b/client/01'</b>
 <ca>
 -----BEGIN CERTIFICATE-----
 -----END CERTIFICATE-----
