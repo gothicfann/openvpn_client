@@ -26,8 +26,8 @@ For more installation details please visit: https://chocolatey.org/install
 
 #### 2. Install OpenSC
 
-Navigate to this link: https://github.com/OpenSC/OpenSC/releases
-Download latest compatible version for you OS and system architecture.
+Navigate to this link: https://github.com/OpenSC/OpenSC/releases  
+Download latest compatible version for you OS and system architecture.  
 Install it with default options.
 
 #### 3. Install OpenVPN (2.4.4)
@@ -49,8 +49,11 @@ cd "C:\Program Files\OpenVPN\bin"
 ```
 openvpn.exe --show-pkcs11-ids "C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll"
 ```
-4. You will get your certificates Serialized Id from Yubikey, similiar to this `piv_II/PKCS\x2315\x20emulated/0f1f5e860fae681b/client/01`.
+4. You will get your certificates Serialized Id from Yubikey, similiar to this:
+`piv_II/PKCS\x2315\x20emulated/0f1f5e860fae681b/client/01`.
 5. Copy this Serilized Id and paste it in your `client.ovpn` file for `pkcs11-id` parameter:
+
+`client-sample.ovpn`  
 ```
 client
 pull
