@@ -3,7 +3,7 @@
 ## Fedora 28 (script installation)
 
 Just run `sudo ./ovpn_fedora_install.sh`. 
-It will install and confgure openvpn and all the dependecnies and generate client config file for you that uses you yubikey to authenticate through OpenVPN server.
+It will install and confgure openvpn and all the dependecnies and generate client config file for you that uses your yubikey to authenticate through OpenVPN server.
 
 ## Windows 10 (manual installation)
 
