@@ -41,7 +41,7 @@ choco install openvpn --version 2.4.4 -y
 #### 4. Get certificates serialized id from your Yubikey device
 
 1. Insert you Yubikey device.
-2. In command prompt enter the command navigate to `C:\Program Files\OpenVPN\bin` using
+2. Using command prompt navigate to `C:\Program Files\OpenVPN\bin` using:
 ```
 cd "C:\Program Files\OpenVPN\bin"
 ```
