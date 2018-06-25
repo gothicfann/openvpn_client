@@ -13,11 +13,15 @@ Like in linux distros there is a package manager for windows also. I strongly re
 manual we will be using it.
 So lets start:
 
-1. First install Windows package manager (http://Chocolatey.org)
+##### 1. Install Windows package manager (http://Chocolatey.org)
 
 open you command prompt (cmd.exe) as an `Administrator` user and issue command:
-`@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"`
+
+```
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
 
 for more installation details please visit: https://chocolatey.org/install
 
-2. 
+##### 2. Install OpenSC
+
