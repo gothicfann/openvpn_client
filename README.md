@@ -26,9 +26,9 @@ For more installation details please visit: https://chocolatey.org/install
 
 #### 2. Install OpenSC
 
-Navigate to this link: https://github.com/OpenSC/OpenSC/releases  
-Download latest compatible version for you OS and system architecture.  
-Install it with default options.
+1. Navigate to this link: https://github.com/OpenSC/OpenSC/releases  
+2. Download latest compatible version for you OS and system architecture.  
+3. Install it with default options.
 
 #### 3. Install OpenVPN (2.4.4)
 
