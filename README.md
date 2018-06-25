@@ -85,7 +85,7 @@ pkcs11-id 'piv_II/PKCS\x2315\x20emulated/0f1f5e860fae681b/client/01'</b>
 </tls-crypt>
 </pre>
 
-#### 5. Import your clinet configuration file in OpenVPN
+#### 5. Import your client configuration file in OpenVPN
 Simply copy your newly configured `client.ovpn` in `C:\Program Files\OpenVPN\config` directory and run OpenVPN app.  
 It will ask you for Yubikey PIN code.  
 Enter PIN and enjoy VPN Connection).
