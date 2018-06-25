@@ -20,7 +20,7 @@ Run you command prompt (cmd.exe) as an `Administrator` user and issue command:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
-Note! After this close the `cmd.exe`.
+Note! After this close the Command Prompt.
 
 For more installation details please visit: https://chocolatey.org/install
 
@@ -49,7 +49,7 @@ cd "C:\Program Files\OpenVPN\bin"
 ```
 openvpn.exe --show-pkcs11-ids "C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll"
 ```
-4. You will get your certificates Serialized Id from Yubikey, similiar to this:
+4. You will get your certificates Serialized Id from Yubikey, similiar to this:  
 `piv_II/PKCS\x2315\x20emulated/0f1f5e860fae681b/client/01`.
 5. Copy this Serilized Id and paste it in your `client.ovpn` file for `pkcs11-id` parameter:
 
@@ -70,7 +70,7 @@ auth-nocache
 verb 4
 ### Your OpenSC pkcs11 drivers full path:
 pkcs11-providers 'C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll'
-### NOTE! Dont forget to paste your Serialized Id in single quotes:
+### NOTE! Dont forget to paste your Serialized Id between the single quotes:
 pkcs11-id 'Serialized Id'
 <ca>
 -----BEGIN CERTIFICATE-----
