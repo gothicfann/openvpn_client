@@ -20,7 +20,7 @@ Run you command prompt (cmd.exe) as an `Administrator` user and issue command:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
-Note! After this close the Command Prompt.
+**Note! After this close the Command Prompt.**
 
 For more installation details please visit: https://chocolatey.org/install
 
