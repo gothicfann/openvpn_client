@@ -54,7 +54,7 @@ openvpn.exe --show-pkcs11-ids "C:\Program Files\OpenSC Project\OpenSC\pkcs11\ope
 5. Copy this Serilized Id and paste it in your `client.ovpn` file for `pkcs11-id` parameter:  
 **NOTE! Paste your serialized id between single quotes ('')**
 
-```
+<pre>
 client
 pull
 dev tun
@@ -83,4 +83,4 @@ pkcs11-id 'Serialized Id'</b>
 -----BEGIN OpenVPN Static key V1-----
 -----END OpenVPN Static key V1-----
 </tls-crypt>
-```
+</pre>
